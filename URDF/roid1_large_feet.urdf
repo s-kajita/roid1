@@ -54,7 +54,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_chest.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_chest_a.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
