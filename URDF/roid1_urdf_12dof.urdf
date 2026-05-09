@@ -20,25 +20,25 @@
   <!--link name="base_footprint" /-->
   <link name="base_link">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.0004860989233068058 0.009532810756286874 0.01338898" />
+      <origin rpy="0 0 0" xyz="-0.0004860989233068058 0.009532810756286874 0.27413898086600197" />
       <mass value="0.13408213174666955" />
       <inertia ixx="6.3e-05" ixy="0.0" ixz="-0.0" iyy="3.6e-05" iyz="-0.0" izz="6.8e-05" />
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_waist.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_waist.stl" />
       </geometry>
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_waist.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_waist.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--chest-->
-  <joint name="c_chest_yaw" type="revolute">
+  <joint name="c_chest_yaw" type="fixed">
     <parent link="base_link" />
     <child link="c_chest" />
     <axis xyz="0 0 1" />
@@ -54,7 +54,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_chest_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_chest.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
@@ -92,19 +92,19 @@
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_chest_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_chest_b.stl" />
       </geometry>
       <material name="light_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_chest_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_chest_b.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--head-->
-  <joint name="c_head_yaw" type="revolute">
+  <joint name="c_head_yaw" type="fixed">
     <parent link="c_chest" />
     <child link="c_head" />
     <axis xyz="0 0 1" />
@@ -119,21 +119,21 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_head_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_head_a.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_head_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_head_b.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_blue" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/c_head_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/c_head_a.stl" />
       </geometry>
     </collision>
   </link>
@@ -142,7 +142,7 @@
   <!--left side upper body-->
 
   <!--chest to l_shoulder-->
-  <joint name="l_shoulder_pitch" type="revolute">
+  <joint name="l_shoulder_pitch" type="fixed">
     <parent link="c_chest" />
     <child link="l_shoulder" />
     <axis xyz="0 1 0" />
@@ -157,7 +157,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_shoulder.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_shoulder.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray">
@@ -166,20 +166,20 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/dec_shoulderpoint.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/dec_shoulderpoint.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="orange" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_shoulder.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_shoulder.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--l_shoulder_roll-->
-  <joint name="l_shoulder_roll" type="revolute">
+  <joint name="l_shoulder_roll" type="fixed">
     <parent link="l_shoulder" />
     <child link="l_upperarm" />
     <axis xyz="1 0 0" />
@@ -194,20 +194,20 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_arm_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_arm_upper.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_arm_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_arm_upper.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--l_elbow_yaw-->
-  <joint name="l_elbow_yaw" type="revolute">
+  <joint name="l_elbow_yaw" type="fixed">
     <parent link="l_upperarm" />
     <child link="l_elbow" />
     <axis xyz="0 0 1" />
@@ -222,20 +222,20 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_elbow.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_elbow.stl" />
       </geometry>
       <origin xyz="0.0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_elbow.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_elbow.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--l_elbow_pitch-->
-  <joint name="l_elbow_pitch" type="revolute">
+  <joint name="l_elbow_pitch" type="fixed">
     <parent link="l_elbow" />
     <child link="l_lowerarm" />
     <axis xyz="0 1 0" />
@@ -250,14 +250,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_arm_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_arm_lower.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_arm_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_arm_lower.stl" />
       </geometry>
     </collision>
   </link>
@@ -266,7 +266,7 @@
   <!--right side upper body-->
 
   <!--r_shoulder_pitch-->
-  <joint name="r_shoulder_pitch" type="revolute">
+  <joint name="r_shoulder_pitch" type="fixed">
     <parent link="c_chest" />
     <child link="r_shoulder" />
     <axis xyz="0 1 0" />
@@ -281,7 +281,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_shoulder.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_shoulder.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray">
@@ -290,20 +290,20 @@
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/dec_shoulderpoint.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/dec_shoulderpoint.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="orange" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_shoulder.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_shoulder.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--r_shoulder_roll-->
-  <joint name="r_shoulder_roll" type="revolute">
+  <joint name="r_shoulder_roll" type="fixed">
     <parent link="r_shoulder" />
     <child link="r_upperarm" />
     <axis xyz="1 0 0" />
@@ -318,20 +318,20 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_arm_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_arm_upper.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_arm_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_arm_upper.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--r_elbow_yaw-->
-  <joint name="r_elbow_yaw" type="revolute">
+  <joint name="r_elbow_yaw" type="fixed">
     <parent link="r_upperarm" />
     <child link="r_elbow" />
     <axis xyz="0 0 1" />
@@ -346,20 +346,20 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_elbow.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_elbow.stl" />
       </geometry>
       <origin xyz="0.0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_elbow.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_elbow.stl" />
       </geometry>
     </collision>
   </link>
 
   <!--r_elbow_pitch-->
-  <joint name="r_elbow_pitch" type="revolute">
+  <joint name="r_elbow_pitch" type="fixed">
     <parent link="r_elbow" />
     <child link="r_lowerarm" />
     <axis xyz="0 1 0" />
@@ -374,14 +374,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_arm_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_arm_lower.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_arm_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_arm_lower.stl" />
       </geometry>
     </collision>
   </link>
@@ -405,21 +405,21 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_hipjoint_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_hipjoint_upper.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/dec_l_hipjoint_upperpoint.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/dec_l_hipjoint_upperpoint.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="orange" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_hipjoint_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_hipjoint_upper.stl" />
       </geometry>
     </collision>
   </link>
@@ -440,14 +440,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_hipjoint_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_hipjoint_lower.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_hipjoint_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_hipjoint_lower.stl" />
       </geometry>
     </collision>
   </link>
@@ -468,21 +468,21 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_leg_upper_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_leg_upper_a.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_leg_upper_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_leg_upper_b.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_leg_upper_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_leg_upper_a.stl" />
       </geometry>
     </collision>
   </link>
@@ -503,26 +503,26 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_leg_lower_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_leg_lower_a.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_leg_lower_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_leg_lower_b.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_leg_lower_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_leg_lower_a.stl" />
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_leg_lower_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_leg_lower_b.stl" />
       </geometry>
     </collision>
   </link>
@@ -543,14 +543,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_ankle.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_ankle.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_ankle.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_ankle.stl" />
       </geometry>
     </collision>
   </link>
@@ -571,14 +571,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_foot_middle.stl"  scale="0.1 0.1 0.1"/>
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_foot_middle.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/l_foot_middle.stl"  scale="0.1 0.1 0.1"/>
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/l_foot_middle.stl" />
       </geometry>
     </collision>
   </link>
@@ -602,21 +602,21 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_hipjoint_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_hipjoint_upper.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/dec_r_hipjoint_upperpoint.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/dec_r_hipjoint_upperpoint.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="orange" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_hipjoint_upper.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_hipjoint_upper.stl" />
       </geometry>
     </collision>
   </link>
@@ -637,14 +637,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_hipjoint_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_hipjoint_lower.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_hipjoint_lower.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_hipjoint_lower.stl" />
       </geometry>
     </collision>
   </link>
@@ -665,21 +665,21 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_leg_upper_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_leg_upper_a.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_leg_upper_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_leg_upper_b.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_leg_upper_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_leg_upper_a.stl" />
       </geometry>
     </collision>
   </link>
@@ -700,26 +700,26 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_leg_lower_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_leg_lower_a.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_leg_lower_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_leg_lower_b.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="light_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_leg_lower_a.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_leg_lower_a.stl" />
       </geometry>
     </collision>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_leg_lower_b.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_leg_lower_b.stl" />
       </geometry>
     </collision>
   </link>
@@ -740,14 +740,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_ankle.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_ankle.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_ankle.stl" />
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_ankle.stl" />
       </geometry>
     </collision>
   </link>
@@ -768,14 +768,14 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_foot_middle.stl"  scale="0.1 0.1 0.1"/>
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_foot_middle.stl" />
       </geometry>
       <origin xyz="0 0 0" />
       <material name="dark_gray" />
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://roid1_description/meshes/r_foot_middle.stl"  scale="0.1 0.1 0.1"/>
+        <mesh filename="package://roid1/URDF/roid1_description/meshes/r_foot_middle.stl" />
       </geometry>
     </collision>
   </link>
